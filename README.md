@@ -12,16 +12,16 @@ Bithumb Open API wrapper for .NET
 
 ### Example
 refer to [this](https://github.com/dongbin300/Bithumb.Net/blob/main/Bithumb.Net.Examples/MainWindow.xaml.cs)
-
+<br/>
 #### BithumbClient
-##### Create a Bithumb client with `connectKey` and `secretKey`
+##### 1. Create a Bithumb client with `connectKey` and `secretKey`
 ```C#
 var connectKey = "your_API_key";
 var secretKey = "your_secret_key";
 var client = new BithumbClient(connectKey, secretKey);
 ```
 
-##### Get current BTC price
+##### 2. Get current BTC price
 ```C#
 var result = client.Public.GetTickerAsync(BithumbPaymentCurrency.KRW, "BTC");
 result.Wait();
@@ -29,17 +29,17 @@ var price = result.Result.data?.closing_price;
 ```
 
 #### BithumbSocketClient
-##### Create a Bithumb socket client
+##### 1. Create a Bithumb socket client
 ```C#
 var socketClient = new BithumbSocketClient();
 ```
 
-##### Subscribe to ticker for getting current BTC price
+##### 2. Subscribe to ticker for getting current BTC price
 ```C#
 await socketClient.Streams.SubscribeToTickerAsync( "BTC_KRW", BithumbSocketTickInterval.OneHour, OnMessage).ConfigureAwait(false);
 ```
 
-##### Implement OnMessage Method
+##### 3. Implement OnMessage Method
 ```C#
 private void OnMessage(BithumbWebSocketResponse<BithumbWebSocketTicker> obj)
 {
@@ -52,7 +52,7 @@ private void OnMessage(BithumbWebSocketResponse<BithumbWebSocketTicker> obj)
 }
 ```
 
-##### Unsubscribe to stop getting price
+##### 4. Unsubscribe to stop getting price
 ```C#
 socketClient.Streams.UnsubscribeToTicker();
 ```
