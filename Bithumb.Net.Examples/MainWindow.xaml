@@ -1,0 +1,30 @@
+﻿<Window x:Class="Bithumb.Net.Examples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bithumb.Net.Examples"
+        mc:Ignorable="d"
+        Title="Bithumb Open API Example" Height="150" Width="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Header="Bithumb Socket Client Example">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="SocketTickerText" Width="300" Margin="6"/>
+                <Button x:Name="SocketTickerSubscribeButton" Width="100" Content="Subscribe" Click="SocketTickerSubscribeButton_Click"/>
+                <Button x:Name="SocketTickerUnsubscribeButton" Width="100" Content="Unsubscribe" Click="SocketTickerUnsubscribeButton_Click"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Header="Bithumb Client Example">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="TickerText" Width="300" Margin="6"/>
+                <Button x:Name="TickerGetButton" Width="100" Content="Get" Click="TickerGetButton_Click"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
