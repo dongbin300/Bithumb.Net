@@ -130,7 +130,10 @@ namespace Bithumb.Net.Clients.PrivateApis
         }
 
         /// <summary>
+        /// ※ NEED TO MORE TEST
+        /// <para>
         /// 개인 가상자산 출금 신청 기능을 제공합니다. (원화 출금은 API를 제공하지 않습니다.)
+        /// </para>
         /// <para>
         /// 출금 거래소명은 영문으로 입력하시기 바랍니다. (대소문자 구분 없음)
         /// </para>
@@ -146,7 +149,7 @@ namespace Bithumb.Net.Clients.PrivateApis
         /// <param name="destination">XRP 출금 시 Destination Tag, STEEM 출금 시 입금 메모</param>
         /// <returns></returns>
         /// <seealso cref="https://apidocs.bithumb.com/reference/%EC%BD%94%EC%9D%B8-%EC%B6%9C%EA%B8%88%ED%95%98%EA%B8%B0-%EA%B0%9C%EC%9D%B8"/>
-        public async Task<BithumbTradeResponse> WithdrawalIndividualAsync(string exchangeName, string currency, string address, string units, string koreanName, string englishName, string destination = "")
+        public async Task<BithumbTradeResponse> WithdrawalIndividualAsync(string exchangeName, string currency, string address, decimal units, string koreanName, string englishName, string destination = "")
         {
             var endpoint = "/trade/btc_withdrawal";
             var parameters = new Dictionary<string, string>
@@ -165,7 +168,10 @@ namespace Bithumb.Net.Clients.PrivateApis
         }
 
         /// <summary>
+        /// ※ NEED TO MORE TEST
+        /// <para>
         /// 법인 가상자산 출금 신청 기능을 제공합니다. (원화 출금은 API를 제공하지 않습니다.)
+        /// </para>
         /// <para>
         /// 출금 거래소명은 영문으로 입력하시기 바랍니다. (대소문자 구분 없음)
         /// </para>
@@ -185,7 +191,7 @@ namespace Bithumb.Net.Clients.PrivateApis
         /// <param name="destination">XRP 출금 시 Destination Tag, STEEM 출금 시 입금 메모</param>
         /// <returns></returns>
         /// <seealso cref="https://apidocs.bithumb.com/reference/%EC%BD%94%EC%9D%B8-%EC%B6%9C%EA%B8%88%ED%95%98%EA%B8%B0-%EB%B2%95%EC%9D%B8"/>
-        public async Task<BithumbTradeResponse> WithdrawalCorporateAsync(string apiKey, string secretKey, string exchangeName, string currency, string address, string units, string koreanName, string englishName, string corporateRepresentativeKoreanName, string corporateRepresentativeEnglishName, string destination = "")
+        public async Task<BithumbTradeResponse> WithdrawalCorporateAsync(string apiKey, string secretKey, string exchangeName, string currency, string address, decimal units, string koreanName, string englishName, string corporateRepresentativeKoreanName, string corporateRepresentativeEnglishName, string destination = "")
         {
             var endpoint = "/trade/btc_withdrawal";
             var parameters = new Dictionary<string, string>
